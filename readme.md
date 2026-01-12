@@ -20,13 +20,13 @@ A Discord bot that monitors multiple Arma 3 game servers and posts real-time sta
 
 ## Discord Bot Permissions
 
-The bot requires the following permissions (93184):
+The bot requires the following permissions (84992):
 - View Channels
 - Send Messages
 - Embed Links
 - Read Message History
 
-[Permission Calculator](https://discordapi.com/permissions.html#93184)
+[Permission Calculator](https://discordapi.com/permissions.html#84992)
 
 ## Installation
 
@@ -34,8 +34,8 @@ The bot requires the following permissions (93184):
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/a3serverwatcher.git
-   cd a3serverwatcher
+   git clone https://github.com/Skullfox/A3SW.git
+   cd A3SW
    ```
 
 2. **Install dependencies:**
@@ -90,8 +90,8 @@ Each server in the `SERVERS` array requires:
 
 ```json
 [
-  {"host":"37.27.30.71","port":2302,"channelId":"496068582447513647","name":"Server 1"},
-  {"host":"142.44.169.172","port":2302,"channelId":"496068582447513647","name":"Server 2"}
+  {"host":"127.0.0.1","port":2302,"channelId":"123456789","name":"Server 1"},
+  {"host":"127.0.0.1","port":2402,"channelId":"112233445","name":"Server 2"}
 ]
 ```
 
