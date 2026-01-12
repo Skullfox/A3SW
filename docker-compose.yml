@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  a3serverwatcher:
+    image: node:25
+    container_name: a3serverwatcher
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+    command: ["sh", "-c", "npm install && node index.js"]
+    environment:
+      - NODE_ENV=production
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    network_mode: bridge
+    restart: unless-stopped
