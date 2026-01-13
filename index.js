@@ -98,7 +98,7 @@ function formatServerEmbeds(stats) {
                 { name: '🔱 Mission', value: s.stats.raw.game || 'Unknown', inline: false },
                 { name: '🗺️ Map', value: s.stats.map || 'Unknown', inline: true },
                 { name: '👥 Players', value: `${s.stats.numplayers}/${s.stats.maxplayers}`, inline: true },
-                { name: '⚡ Ping(EU)', value: s.stats.ping ? `${s.stats.ping} ms` : 'Unknown', inline: true },
+                { name: '⚡ Ping', value: s.stats.ping ? `${s.stats.ping} ms` : 'Unknown', inline: true },
                 { name: '🔐 Password', value: s.stats.password ? 'Yes' : 'No', inline: true },
                 { name: '🔰 Game Version', value: s.stats.version || 'Unknown', inline: true },
             ],

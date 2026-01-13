@@ -2,7 +2,6 @@
 
 A Discord bot that monitors multiple Arma 3 game servers and posts real-time status updates to Discord channels.
 
-<img width="518" height="254" alt="Screenshot 2026-01-13 135014" src="https://github.com/user-attachments/assets/e7f105a4-7ee6-4c2e-a0df-8725138b389b" />
 
 ## Features
 
