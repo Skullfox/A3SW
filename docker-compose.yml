@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  a3serverwatcher:
+  a3sw:
     image: node:25
-    container_name: a3serverwatcher
+    container_name: a3sw
     working_dir: /usr/src/app
     volumes:
       - ./:/usr/src/app

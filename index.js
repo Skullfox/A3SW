@@ -91,17 +91,18 @@ function formatServerEmbeds(stats) {
         const randomColor = Math.floor(Math.random() * 0xffffff);
 
         return {
-            title: s.stats.name || s.name || 'Unknown Server',
+            title: s.stats.name,
             color: randomColor,
             thumbnail: { url: 'https://arma3.com/assets/img/logos/arma3.png' },
             fields: [
-                { name: 'Map', value: s.stats.map || 'Unknown', inline: true },
-                { name: 'Mission', value: s.stats.raw.game || 'Unknown', inline: true },
-                { name: 'Players', value: `${s.stats.numplayers}/${s.stats.maxplayers}`, inline: true },
-                { name: 'Password Protected', value: s.stats.password ? ':lock: ' : ':unlock: ', inline: true },
-                { name: 'Game Version', value: s.stats.version || 'Unknown', inline: true },
+                { name: '🔱 Mission', value: s.stats.raw.game || 'Unknown', inline: false },
+                { name: '🗺️ Map', value: s.stats.map || 'Unknown', inline: true },
+                { name: '👥 Players', value: `${s.stats.numplayers}/${s.stats.maxplayers}`, inline: true },
+                { name: '⚡ Ping(EU)', value: s.stats.ping ? `${s.stats.ping} ms` : 'Unknown', inline: true },
+                { name: '🔐 Password', value: s.stats.password ? 'Yes' : 'No', inline: true },
+                { name: '🔰 Game Version', value: s.stats.version || 'Unknown', inline: true },
             ],
-            footer: { text: `IP: ${s.host}:${s.port}` },
+            footer: { text: `IP: ${s.stats.connect}` },
             timestamp: new Date().toISOString(),
         };
     });
@@ -113,9 +114,11 @@ function getServerKey(server) {
 
 function savePostId(server, id) {
     let data = {};
+
     try {
         data = JSON.parse(fs.readFileSync(POST_ID_FILE, 'utf8'));
     } catch { }
+    
     data[getServerKey(server)] = id;
     fs.writeFileSync(POST_ID_FILE, JSON.stringify(data, null, 2), 'utf8');
 }
